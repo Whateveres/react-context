@@ -1,0 +1,62 @@
+#root {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas iguales */
+    gap: 10px;
+    padding: 3rem; 
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido adicional se recorte según los límites del contenedor */
+    background-position: center;
+    background-size: cover;
+   /* Mediante combinación de 'width y padding-top', se establece una relación de aspecto de 1:1 */
+    width: 100%;
+    padding-top: 100%; /* Relleno superior que determinará la altura del contenedor */
+  }
+  
+  .gallery-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área, recortando si es necesario */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Animación suave al pasar el ratón */
+  }
+  
+  .gallery-item:hover .gallery-image {
+    transform: scale(1.05); /* Aumenta ligeramente la imagen al pasar el ratón */
+  }
+  
+  .heart-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .heart-button svg {
+    width: 40px;
+    height: 40px;
+    fill: white; /* Color de relleno inicial del icono del corazón */
+  }
+  
+  .heart-button:hover svg {
+    fill: #ff6161; /*Cambia el color de relleno del icono del corazón al pasar el ratón */
+  }
+  
+  .photo-description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+}
